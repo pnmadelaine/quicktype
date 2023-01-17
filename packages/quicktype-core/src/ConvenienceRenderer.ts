@@ -803,6 +803,10 @@ export abstract class ConvenienceRenderer extends Renderer {
         return "// ";
     }
 
+    protected get commentLineEnd(): string {
+        return "";
+    }
+
     protected emitCommentLines(
         lines: Sourcelike[],
         lineStart?: string,
@@ -822,10 +826,11 @@ export abstract class ConvenienceRenderer extends Renderer {
         let first = true;
         for (const line of lines) {
             let start = first ? firstLineStart : lineStart;
+            let end = this.commentLineEnd;
             if (this.sourcelikeToString(line) === "") {
                 start = trimEnd(start);
             }
-            this.emitLine(start, line);
+            this.emitLine(start, line, end);
             first = false;
         }
         if (afterLine !== undefined) {
