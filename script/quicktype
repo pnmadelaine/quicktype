@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This runs quicktype, ensuring dependencies are installed
 # and rebuilding quicktype first.
