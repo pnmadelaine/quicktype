@@ -22,6 +22,7 @@ import { PythonTargetLanguage } from "./Python";
 import { PikeTargetLanguage } from "./Pike";
 import { HaskellTargetLanguage } from "./Haskell";
 import { PhpTargetLanguage } from "./Php";
+import { OCamlTargetLanguage } from "./OCaml";
 
 export const all: TargetLanguage[] = [
     new CSharpTargetLanguage(),
@@ -44,7 +45,8 @@ export const all: TargetLanguage[] = [
     new PythonTargetLanguage("Python", ["python", "py"], "py"),
     new PikeTargetLanguage(),
     new HaskellTargetLanguage(),
-    new PhpTargetLanguage()
+    new PhpTargetLanguage(),
+    new OCamlTargetLanguage()
 ];
 
 export function languageNamed(name: string, targetLanguages?: TargetLanguage[]): TargetLanguage | undefined {
